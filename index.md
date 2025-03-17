@@ -77,21 +77,16 @@ classDiagram
 
 ## Participantes
 1. **ServiceInterface**:  
-   - Declara a interface que define os métodos disponíveis para o serviço.  
-   - Permite que tanto o objeto real quanto o Proxy sejam intercambiáveis para o cliente.
+Declara a interface que define os métodos disponíveis para o serviço e permite que tanto o objeto real quanto o Proxy sejam intercambiáveis para o cliente.
 
 2. **Service**:  
-   - Implementa a lógica de negócio real.  
-   - Responsável por executar operações como listagem de vídeos, obtenção de informações e download de vídeos.
+Implementa a lógica de negócio real. O service também é responsável por executar operações como listagem de vídeos, obtenção de informações e download de vídeos.
 
 3. **Proxy**:  
-   - Implementa a mesma interface do serviço real.  
-   - Mantém uma referência ao objeto Service e gerencia operações adicionais, como inicialização preguiçosa e cache.  
-   - Delegada as chamadas ao objeto Service quando necessário, evitando operações redundantes.
+Implementa a mesma interface do serviço real. Mantém uma referência ao objeto Service e gerencia operações adicionais, como inicialização preguiçosa e cache. Delega as chamadas ao objeto Service quando necessário, evitando operações redundantes.
 
 4. **Client**:  
-   - Trabalha com objetos que implementam a ServiceInterface, sem se preocupar se está interagindo com o Proxy ou com o Service real.  
-   - Recebe o objeto (proxy ou real) e realiza operações como renderizar páginas de vídeo e listas.
+Trabalha com objetos que implementam a ServiceInterface, sem se preocupar se está interagindo com o Proxy ou com o Service real. Recebe o objeto (proxy ou real) e realiza operações como renderizar páginas de vídeo e listas.
 
 ## Código Java
 A seguir, um exemplo de código Java que implementa o padrão Proxy no cenário de uma integração com o YouTube:
